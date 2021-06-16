@@ -6,7 +6,7 @@ import SiteHeader from "components/common/SiteHeader";
 export async function getServerSideProps({ params, req, res, query, preview, resolvedUrl, locale, locales, defaultLocale }) {
 
 	if (! preview) {
-		context.res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate=59')
+		res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate=59')
 	}
 
 	//import { getAgilityPageProps  } from "@agility/nextjs/node";

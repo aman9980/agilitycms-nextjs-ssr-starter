@@ -5,6 +5,10 @@ import SiteHeader from "components/common/SiteHeader";
 
 export async function getServerSideProps({ params, req, res, query, preview, resolvedUrl, locale, locales, defaultLocale }) {
 
+	if (! preview) {
+		context.res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate=59')
+	}
+
 	//import { getAgilityPageProps  } from "@agility/nextjs/node";
 	let { getAgilityPageProps } = require("@agility/nextjs/node")
 
@@ -27,6 +31,7 @@ export async function getServerSideProps({ params, req, res, query, preview, res
 		// We throw to make sure this fails at build time as this is never expected to happen
 		throw new Error(`Page not found`);
 	}
+
 
 	return {
 		// return all props

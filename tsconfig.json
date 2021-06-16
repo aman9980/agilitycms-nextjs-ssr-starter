@@ -19,10 +19,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/[...slug].js",
+    "**/.jsx",
     "pages/index.js",
-    "**/*.js"
-  ],
+    "**/*.js"],
   "exclude": ["node_modules"],
   "paths": {
     "components/*": ["components/*"],

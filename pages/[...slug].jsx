@@ -6,7 +6,7 @@ import SiteHeader from "components/common/SiteHeader";
 export async function getServerSideProps({ params, req, res, query, preview, resolvedUrl, locale, locales, defaultLocale }) {
 
 	try {
-
+console.log("TEST", params, resolvedUrl)
 		if (!preview) {
 			res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate=59')
 		}

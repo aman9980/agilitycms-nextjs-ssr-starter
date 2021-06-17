@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { agilityImageLoader } from "image-util"
 
 const TextBlockWithImage = ({ module }) => {
   // get module fields
@@ -51,6 +52,7 @@ const TextBlockWithImage = ({ module }) => {
                 width="768"
                 height="512"
                 className="rounded-lg object-cover object-center cursor-pointer"
+				loader={agilityImageLoader}
               />
             </Link>
           ) : (
@@ -60,6 +62,7 @@ const TextBlockWithImage = ({ module }) => {
               width="768"
               height="512"
               className="rounded-lg object-cover object-center"
+			  loader={agilityImageLoader}
             />
           )}
         </div>

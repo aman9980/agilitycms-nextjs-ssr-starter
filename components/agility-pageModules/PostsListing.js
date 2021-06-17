@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { agilityImageLoader } from "image-util"
 
 const PostsListing = ({ module, customData }) => {
   // get posts
@@ -36,6 +37,7 @@ const PostsListing = ({ module, customData }) => {
                       alt={post.imageAlt}
                       className="object-cover object-center rounded-t-lg"
                       layout="fill"
+					  loader={agilityImageLoader}
                     />
                   </div>
                   <div className="bg-gray-100 p-8 border-2 border-t-0 rounded-b-lg">

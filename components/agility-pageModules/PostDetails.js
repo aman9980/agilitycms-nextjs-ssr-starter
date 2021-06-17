@@ -1,6 +1,7 @@
 import React from "react";
 import { renderHTML } from "@agility/nextjs";
 import Image from "next/image";
+import { agilityImageLoader } from "image-util"
 
 const PostDetails = ({ dynamicPageItem }) => {
   // post fields
@@ -20,6 +21,7 @@ const PostDetails = ({ dynamicPageItem }) => {
             src={post.image.url}
             className="object-cover object-center rounded-lg"
             layout="fill"
+			loader={agilityImageLoader}
           />
         </div>
         <div className="max-w-2xl mx-auto mt-4">

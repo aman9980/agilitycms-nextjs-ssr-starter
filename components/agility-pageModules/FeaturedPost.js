@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import truncate from "truncate-html";
+import { agilityImageLoader } from "image-util"
 
 const FeaturedPost = ({ module }) => {
   // get module fields
@@ -38,6 +39,7 @@ const FeaturedPost = ({ module }) => {
                   src={featuredPost.fields.image.url}
                   className="object-cover object-center rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
                   layout="fill"
+				  loader={agilityImageLoader}
                 />
               </div>
             </a>

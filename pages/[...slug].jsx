@@ -10,7 +10,7 @@ export async function getServerSideProps({ params, req, res, query, preview, res
 
 
 		if (!preview) {
-			res.setHeader('Cache-Control', 's-maxage=60')
+			res.setHeader('cache-control', 'public, max-age=60')
 		}
 
 		//import { getAgilityPageProps  } from "@agility/nextjs/node";

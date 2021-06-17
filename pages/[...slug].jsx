@@ -1,22 +1,16 @@
 import Layout from "components/common/Layout";
 import { getModule } from "components/agility-pageModules";
 import SiteHeader from "components/common/SiteHeader";
-
+import { getAgilityPageProps  } from "@agility/nextjs/node";
 
 export async function getServerSideProps({ params, req, res, query, preview, resolvedUrl, locale, locales, defaultLocale }) {
 
 	try {
 
-
-
 		if (!preview) {
 			//CACHE THIS PAGE FOR 60s (TODO: switch this to stale-while-revalidate if the CDN you're using supports it)
 			res.setHeader('cache-control', 'public, max-age=60')
 		}
-
-		//import { getAgilityPageProps  } from "@agility/nextjs/node";
-		let { getAgilityPageProps } = require("@agility/nextjs/node")
-
 
 		//place all global here
 		const globalComponents = {

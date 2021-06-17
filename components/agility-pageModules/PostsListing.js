@@ -92,23 +92,18 @@ PostsListing.getCustomInitialProps = async ({
     let rawPosts = await api.getContentList({
       referenceName: "posts",
       languageCode,
+	  depth: 2,
+	  contentLinkDepth: 2,
+	  take: 20
     });
 
-    // get categories...
-    let categories = await api.getContentList({
-      referenceName: "categories",
-      languageCode,
-    });
 
     // resolve dynamic urls
-    const dynamicUrls = resolvePostUrls(sitemap, rawPosts);
+    const dynamicUrls = resolvePostUrls(sitemap, rawPosts.items);
 
-    const posts = rawPosts.map((post) => {
-      // categoryID
-      const categoryID = post.fields.category?.contentid;
+    const posts = rawPosts.items.map((post) => {
 
-      // find category
-      const category = categories?.find((c) => c.contentID == categoryID);
+      const category = post.fields.category;
 
       // date
       const date = new Date(post.fields.date).toLocaleDateString();

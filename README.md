@@ -40,7 +40,7 @@ To start using the Agility CMS & Next.js Starter, [sign up](https://agilitycms.c
 
 ## Running the Site Locally
 
-### Development Mode
+### Development Mode 
 
 When running your site in `development` mode, you will see the latest content in real-time from the CMS.
 
